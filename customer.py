@@ -53,6 +53,9 @@ class Customer:
     def info_csv(self):
         return f"{self.full_name()}\t{self.age}\t{self.entry_fee()}\t"
 
+    # C-8 「|」(パイプ)区切り
+    def v_separate(self):
+        return f"{self.full_name()} | {self.age} | {self.entry_fee()}"
 
 ken = Customer(first_name="Ken", family_name="Tanaka", age=15)
 tom = Customer(first_name="Tom", family_name="Ford", age= 57)
@@ -75,10 +78,7 @@ print(ieyasu.age) # 75 という値を出力
 
 
 # C-3 年令に応じた適切な入場料(entry_fee)を計算できる
-# 計算のルール
-# こども料金(20歳未満):1000円
-# おとな料金(20歳以上65歳未満):1500円
-# # シニア料金(65歳以上):1200円
+
 print("【C-3出力】")
 print(ken.entry_fee())  # 1000 という値を出力
 print(tom.entry_fee())  # 1500 という値を出力
@@ -112,20 +112,21 @@ print(ieyasu.entry_fee_c6())
 
 # C-7 単一顧客の情報取得形式の追加その1
 # 単一顧客の情報取得をタブ区切りにも対応させてください
-# 下記は出力例
-# Ken Tanaka      15      1000
-# Tom Ford        57      1500
-# Ieyasu Tokugawa 75      500
-# Michelle Tanner 3       0
 
-    for customer in customers:
-        print(customer.info_csv())
+
+print("【C-7出力】")
+print(ken.info_csv())
+print(tom.info_csv())
+print(ieyasu.info_csv())
+print(michelle.info_csv())
 
 
 # C-8 単一顧客の情報取得形式の追加その2
 # 単一顧客の情報取得を「|」(パイプ)区切りにも対応させてください
-# 下記は出力例
-# Ken Tanaka|15|1000
-# Tom Ford|57|1500
-# Ieyasu Tokugawa|75|500
-# Michelle Tanner|3|0
+
+
+print("【C-8出力】")
+print(ken.v_separate())
+print(tom.v_separate())
+print(ieyasu.v_separate())
+print(michelle.v_separate())
